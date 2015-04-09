@@ -180,7 +180,7 @@ ws=jsonopt('whitespaces_',struct('tab',sprintf('\t'),'newline',sprintf('\n'),'se
 padding0=repmat(ws.tab,1,level);
 padding2=repmat(ws.tab,1,level+1);
 nl=ws.newline;
-if(len>1)
+if(len>=1)
     if(~isempty(name))
         txt=sprintf('%s"%s": [%s',padding0, checkname(name,varargin{:}),nl); name=''; 
     else
