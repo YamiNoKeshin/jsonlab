@@ -199,11 +199,11 @@ for j=1:dim(2)
        txt=sprintf('%s%s',txt,obj2json(name,item{i,j},level+(dim(1)>1)+(len>1),varargin{:}));
        if(i<dim(1)) txt=sprintf('%s%s',txt,sprintf(',%s',nl)); end
     end
-    if(dim(1)>=1) txt=sprintf('%s%s%s]',txt,nl,padding2); end
+    if(dim(1)>1) txt=sprintf('%s%s%s]',txt,nl,padding2); end
     if(j<dim(2)) txt=sprintf('%s%s',txt,sprintf(',%s',nl)); end
-    %if(j==dim(2)) txt=sprintf('%s%s',txt,sprintf(',%s',nl)); end
+    %if(j==dim(2)) txt=sprintf('%s%s',txt,sprintf('%s',nl)); end
 end
-if(len>1) txt=sprintf('%s%s%s]',txt,nl,padding0); end
+if(len>=1) txt=sprintf('%s%s%s]',txt,nl,padding0); end
 
 %%-------------------------------------------------------------------------
 function txt=struct2json(name,item,level,varargin)
